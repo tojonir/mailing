@@ -94,7 +94,7 @@ app.post("/mail-me", async (req, res) => {
     },
     (err) => {
       if (err) return res.status(400).json(err);
-      return res.json("sent");
+      return res.status(200).send("sent");
     }
   );
 });
