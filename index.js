@@ -40,23 +40,23 @@ app.post("/", async (req, res) => {
       to: req.body.to,
       subject: "ANDRIANARIJAONA Tojonirina",
       html: {
-        path: "./mail.html",
+        path: "./public/mail.html",
       },
       encoding: "text/html",
       attachments: [
         {
-          path: "./assets/ANDRIANARIJAONA Tojonirina.pdf",
+          path: "./public/ANDRIANARIJAONA Tojonirina.pdf",
         },
         {
-          path: "./assets/in.png",
+          path: "./public/in.png",
           cid: "in",
         },
         {
-          path: "./assets/instagram.png",
+          path: "./public/instagram.png",
           cid: "insta",
         },
         {
-          path: "./assets/Profile.png",
+          path: "./public/Profile.png",
           cid: "profile",
         },
       ],
