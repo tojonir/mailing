@@ -74,7 +74,7 @@ app.post("/mail-me", async (req, res) => {
   try {
     mailMeSchema.validateSync(req.body);
   } catch (error) {
-    return res.status(401).json(error.message);
+    return res.status(404).json(error.message);
   }
 
   const transporter = nodemailer.createTransport({
@@ -91,6 +91,7 @@ app.post("/mail-me", async (req, res) => {
     {
       from: req.body.mail,
       to: process.env.EMAIL_USER,
+      cc: req.body.mail,
       subject: req.body.subject,
       html: `<p>${req.body.name}</p><p>${req.body.message}</p>`,
     },
